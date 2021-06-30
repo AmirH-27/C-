@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+int main()
+{
+    int pos,x,y;
+    char s1[50];
+    char s2[50];
+
+    cout<<"Enter First Text : "<<endl;
+    cin.getline(s1,50);
+    
+    cout<<"Enter text you want to search: "<<endl;
+    cin.getline(s2,50);
+
+
+    x= strlen(s1);
+    y= strlen(s2);
+
+    for(int i = 0; i<x; i++){
+        int j;
+        for(j = 0;j<y;j++){
+            if(s1[i+j]!=s2[j]){
+                break;
+            }
+        }
+        if(j==y){
+            pos=i+1;
+        }
+    }
+    cout<<"The word "<<s2<<" is at "<<pos<<" number index";
+
+}
